@@ -1,17 +1,14 @@
 import math
 n = int(input())
-a, b = [], []
+a = [0] * n
 
 for i in range(n):
-    m, n = map(int, input().split())
-    a.append(m)
-    b.append(n)
+    a[i] = tuple(map(int, input().split()))
 result = 0
-for j in range(n):
-    for i in range(j+1, n):
-        m = a[j] - a[i]
-        n = b[j] - b[i]
-        print(m, n)
-        result = max(result, math.sqrt(m * m + n * n))
+for i in range(n):
+    for j in range(n):
+        x = a[i][0] - a[j][0]
+        y = a[i][1] - a[j][1]
+        result = (max(result, math.sqrt(x ** 2 + y ** 2)))
 
 print(result)
