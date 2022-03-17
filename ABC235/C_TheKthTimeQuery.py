@@ -1,13 +1,15 @@
+from collections import defaultdict
 n, q = map(int, input().split())
 a = tuple(map(int, input().split()))
-b = [0] * q
+
+d = defaultdict(list)
+for i in range(n):
+    d[a[i]].append(i + 1)
+
+
 for i in range(q):
-    t = tuple(map(int, input().split()))
-    if t[0] in a and a.count(t[0]) >= t[1]:
-        b[i] = t
-for i in b:
-    if i == 0:
-        print("-1")
+    x, y = map(int, input().split())
+    if len(d[x]) < y:
+        print(-1)
     else:
-        c = [(k, a[k]) for k in range(n) if a[k] == i[0]]
-        print(c[i[1] - 1][0] + 1)
+        print(d[x][y - 1])
