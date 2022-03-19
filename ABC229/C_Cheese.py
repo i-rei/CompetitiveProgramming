@@ -11,7 +11,7 @@ c.reverse()
 
 rd = 0
 i = 0
-while w > 0 and i < n:
+while w > 0 and i < len(c):
     a = c[i]
     if w - cheese[a] == 0:
         rd += a * cheese[a]
