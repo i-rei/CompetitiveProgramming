@@ -4,6 +4,6 @@
 AtCoderでPythonを使っています。
 
 This repository has code of competitive programming.
-I use Python in AtCoder.
+I use Python.I like it!
 I am beginner.
 
